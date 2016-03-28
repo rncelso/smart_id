@@ -1,4 +1,5 @@
 from django.db import models
+import time
 
 # Create your models here.
 class Student(models.Model):
@@ -15,6 +16,13 @@ class timeIn(models.Model):
     timestamp = models.DateTimeField()
     student = models.ForeignKey(Student, on_delete = models.CASCADE)
 
+    def __str__(self):
+        return self.timestamp.strftime('%m/%d/%y %I:%M:%S %p') + ' ' + self.student.first_name
+
+
 class timeOut(models.Model):
     timestamp = models.DateTimeField()
     student = models.ForeignKey(Student, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.timestamp.strftime('%m/%d/%y %I:%M:%S %p') + ' ' + self.student.first_name

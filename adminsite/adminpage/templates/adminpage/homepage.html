@@ -1,0 +1,9 @@
+<form action="http://localhost:8000/smartid/modules/" method="post">
+
+	{% csrf_token %}
+	<input type = "text" name = "SN" value = "Student Number"/>
+	<input type = "password" name = "pwd" value = "Password" />
+	<input type = "submit" value = "Log In">
+
+</form>
+

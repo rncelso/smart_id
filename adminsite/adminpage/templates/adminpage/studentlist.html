@@ -1,0 +1,24 @@
+<h2>Hello {{ user.first_name }}</h2>
+<h1>Student List</h1>
+
+<table>
+
+<tr>
+<td>First Name</td>
+<td>Middle Name</td>
+<td>Last Name</td>
+<td>SN</td>
+<td>In the Building</td>
+</tr>
+
+{% for std in students %}
+	<tr>
+		<td>{{ std.first_name }}</td>
+		<td>{{ std.middle_name }}</td>
+		<td>{{ std.last_name }}</td>
+		<td>{{ std.student_number }}</td>
+		<td>{{ std.inTheBldg }}</td>
+	</tr>
+{% endfor %}
+
+</table>
